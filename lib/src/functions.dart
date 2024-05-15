@@ -62,7 +62,7 @@ Future<void> screenLock({
       barrierColor: Colors.black.withOpacity(0.8),
       pageBuilder: (context, animation, secondaryAnimation) => PopScope(
         canPop: canCancel && onCancelled == null,
-        onPopInvoked: (didPop) async {
+        onPopInvokedWithResult: (didPop, result) async {
           if (didPop) return;
         },
         child: ScreenLock(
@@ -172,7 +172,7 @@ Future<void> screenLockCreate({
       barrierColor: Colors.black.withOpacity(0.8),
       pageBuilder: (context, animation, secondaryAnimation) => PopScope(
         canPop: canCancel && onCancelled == null,
-        onPopInvoked: (didPop) async {
+        onPopInvokedWithResult: (didPop, result) async {
           if (didPop) return;
         },
         child: ScreenLock.create(
